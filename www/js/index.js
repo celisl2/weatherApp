@@ -68,7 +68,6 @@ function getData(url, zip, apiKey) {
     fetch(url + zip + "&units=imperial" +"&APPID=" + apiKey)
     .then(function(response) { return response.json()})
     .then(function(data) {
-        //call formatting function
         setData(data);
     })
     .catch(function() {
@@ -82,6 +81,8 @@ const prepareData = function() {
     // Make ajax call, callback
     if (zip && zip != ''){
         zip = zip.trim();
+        //Cookies.set('zip', zip, { path: 'cookieMngr.js' });
+        Cookies.set('zip', zip);
         getData(url, zip, apiKey);
     }
     else {
