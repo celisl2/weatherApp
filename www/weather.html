@@ -5,28 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/nav.css" />
     
 </head>
 <body onload="getZipCookie()">
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="news.html">News</a>
-        <a href="weather.html">Weather</a>
-    </nav>
+    
     <!-- <p id="cookieZip"></p> -->
-    <div>
-        <h2 id="temp"></h2>
-        <div id="icon"></div>
-        <p id="desc"></p>
-        <h3 id="cityName"></h3>
+      <!-- Container -->
+      
+      <div class="content">
+        <section class="container">
+        <!-- Navigation -->
+		 <section class="navigation">
+		  <div class="nav-container">
+		   <div class="brand">
+		   <div class="logo">
+			<a href="index.html"> 
+			  <img src="img/logo.png" alt="Logo" ></a>
+			</div>
+            </div>
+               <nav>
+               <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                <li>
+                  <a href="index.html">Morning Utilities</a>
+				   </li>
+				   <li>
+					 <a href="news.html">News</a>
+				   </li>   
+				   <li>
+					 <a href="weather.html">Weather</a>
+				   </li>
+					<li>
+					  <a href="coffee.html">Coffee Shops</a>
+				   </li>
+				   <li>
+					  <a href="preference.html">Peferences</a>
+				   </li>
+				 </ul>
+			   </nav>
+			 </div>
+		   </div>
+			
+			 
+    <div class="content">
+      <div class="weather">
+      <h2 id="cityName"></h2>
+       <h5 id="desc"></h5>
+        <h4 id="temp"></h4>
+        <div class="weather2" id="icon"></div>
+     </div>
     </div>
-    <h3>3 Hour Weather Forecast</h3>
+    <hr>
+    <div class="">
+    <h3>Week Weather Forecast</h3>
     <div id="hourlyWeather">
     </div>
+      </div>
+      
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script type="text/javascript" src="js/cookieMngr.js"></script>
     <script type="text/javascript" src="js/weather.js"></script>
-</body>
+    <script type="text/javascript" src="js/nav.js"></script>
+    </body>
 </html>
