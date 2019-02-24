@@ -16,6 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ 
+ var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 1500);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+
 var app = {
     // Application Constructor
     initialize: function() {
