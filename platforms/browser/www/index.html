@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
@@ -19,28 +18,94 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
+    <link rel="stylesheet" type="text/css" href="css/nav.css" />
+    <title>MORNING UTILITES </title>
     <!--<script type="text/javascript" src="cordova.js"></script> -->
     <script type="text/javascript" src="js/index.js"></script>
 </head>
-<body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="news.html">News</a>
-        <a href="weather.html">Weather</a>
-    </nav>
-    <p>Enter zip code</p>
-    <div class="input">
-        <input class="span4" type="text" id="zip" value=""/>
-        <input type="button" class="getWeather" value="Get Weather"/>
-    </div>
-    <div id="info">
-        <ul>
-            <li id="temp">Temperature: </li>
-            <li id="desc">Weather: </li>
-            <li id="icon">Icon here: </li>
-        </ul>
-    </div>
+<body onload="myFunction()" style="margin:0;">
+
+ <div id="loader">
+		<img src="img/logo.png" alt="Logo">
+		  <div id="status">
+		  </div>
+		  <h1>MORNING UTILITES</h1>
+	</div>
+	
+<div class="">
+		<div style="display:none;" id="myDiv" class="animate-bottom">		
+    <!-- Container -->
+  <section class="container">
+        <!-- Navigation -->
+		 <section class="navigation">
+		  <div class="nav-container">
+		   <div class="brand">
+		   <div class="logo">
+			<a href="index.html"> 
+			  <img src="img/logo.png" alt="Logo" ></a>
+			</div>
+            </div>
+               <nav>
+               <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                <li>
+                  <a href="index.html">Morning Utilities</a>
+				   </li>
+				   <li>
+					 <a href="news.html">News</a>
+				   </li>   
+				   <li>
+					 <a href="weather.html">Weather</a>
+				   </li>
+					<li>
+					  <a href="coffee.html">Coffee Shops</a>
+				   </li>
+				   <li>
+					  <a href="preference.html">Peferences</a>
+				   </li>
+				 </ul>
+			   </nav>
+			 </div>
+			 </section>
+			 
+			<div class="box1">		 		 
+				<div class="weather">
+					<h2 id="cityName"></h2>
+					 <h5 id="desc"></h5>
+						<h4 id="temp"></h4>
+						<div class="weather2" id="icon"></div>
+				 </div>
+						 </div>
+						 
+						 <div class="box2">
+							<div id="customNews">
+							</div>
+							<div id="customNews1">
+						 </div>
+						 <div id="customNews2">
+						 </div>
+						 </div>
+					  </div>
+					</div> 	
+				</div>
+			</div>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/nav.js"></script>
+		<script type="text/javascript" src="js/news.js"></script>
+    <script type="text/javascript" src="js/weather.js"></script>
+    <script type="text/javascript">
+				app.initialize();
+				$(document).ready(function(){
+    				setNews();
+				});
+		</script>
+		
+		
 </body>
 </html>

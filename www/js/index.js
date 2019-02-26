@@ -17,6 +17,8 @@
  * under the License.
  */
  
+
+
  var myVar;
 
 function myFunction() {
@@ -48,6 +50,7 @@ var app = {
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
+    /*
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
@@ -58,8 +61,9 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+    */
 };
-
+/*
 const apiKey = "fe65315556290762cbdaa0565485574b";
 const url = "http://api.openweathermap.org/data/2.5/forecast?zip=";
 
@@ -101,11 +105,18 @@ const prepareData = function() {
         alert('Please enter zip code');
     }
 }
+
+
 $(document).ready(function(){
+    
+    setNews();
+    
     $('.getWeather').click(function() {
         prepareData();
       })
+      
 });
+*/
 
 
 

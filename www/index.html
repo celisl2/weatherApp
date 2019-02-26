@@ -71,17 +71,22 @@
 			 </section>
 			 
 			<div class="box1">		 		 
-				<h4>Enter zip code</h4>
-					<div class="input">
-						<input class="span4" type="text" id="zip" value=""/>
-						<input type="button" class="getWeather" value="Get Weather"/>
-					</div>
-						<div id="info">
-							<p id="temp"></p>
-							<p id="desc"></p>
-							<p id="icon"></p>
-						</div>
-					   </div>
+				<div class="weather">
+					<h2 id="cityName"></h2>
+					 <h5 id="desc"></h5>
+						<h4 id="temp"></h4>
+						<div class="weather2" id="icon"></div>
+				 </div>
+						 </div>
+						 
+						 <div class="box2">
+							<div id="customNews">
+							</div>
+							<div id="customNews1">
+						 </div>
+						 <div id="customNews2">
+						 </div>
+						 </div>
 					  </div>
 					</div> 	
 				</div>
@@ -91,9 +96,16 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/nav.js"></script>
+		<script type="text/javascript" src="js/nav.js"></script>
+		<script type="text/javascript" src="js/news.js"></script>
+    <script type="text/javascript" src="js/weather.js"></script>
     <script type="text/javascript">
-        app.initialize();
-    </script>
+				app.initialize();
+				$(document).ready(function(){
+    				setNews();
+				});
+		</script>
+		
+		
 </body>
 </html>

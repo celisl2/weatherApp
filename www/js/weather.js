@@ -54,7 +54,8 @@ function getData(url, zip, apiKey) {
         hourlyWeather(data);
     })
     .catch(function() {
-        alert("couldnt get weather");
+        if(Cookies.get('zip') == null)
+            alert("couldnt get weather");
     });
 }
 const prepareData = function() {
