@@ -51,15 +51,11 @@
 			
 			 
     <div class="content">
-      <div class="weather">
-      <h2 id="cityName"></h2>
-       <h5 id="desc"></h5>
-        <h4 id="temp"></h4>
-        <div class="weather2" id="icon"></div>
+      <div class="weather" id="weatherOverview_Weather">
      </div>
     </div>
     <hr>
-    <div class="">
+    <div class="hourWeather">
     <h3>Week Weather Forecast</h3>
     <div id="hourlyWeather">
     </div>
@@ -71,5 +67,10 @@
     <script type="text/javascript" src="js/cookieMngr.js"></script>
     <script type="text/javascript" src="js/weather.js"></script>
     <script type="text/javascript" src="js/nav.js"></script>  
+    <script>
+    $(document).ready(function(){
+      prepareData("weatherOverview_Weather");
+    }); 
+    </script>
     </body>
 </html>

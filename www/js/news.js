@@ -25,9 +25,9 @@ function getCustomNews()
     return newsCategories;
 }
 
-function formatNews(data, category) {
+function formatNews(data, category, divName) {
     //alert(category);
-   var newsSection = '<div id="categoryName0">' + "<h2>" + category.charAt(0).toUpperCase() + category.slice(1) + "</h2></div>" + '<div id="newsCcontent0">';
+   var newsSection = '<div id="categoryName0_' + divName +'">' + "<h2>" + category.charAt(0).toUpperCase() + category.slice(1) + "</h2></div>" + '<div id="newsContent0_' + divName +'">'
     var source = "";
     var title = "";
     var author = "";
@@ -59,12 +59,12 @@ function formatNews(data, category) {
         //order: title + source + author + link + img + desc
     }
     
-    document.getElementById("customNews").innerHTML = newsSection ;
+    document.getElementById(divName).innerHTML = newsSection ;
 }
 
-function formatNewsTwo(data, category) {
+function formatNewsTwo(data, category, divName) {
     //alert(category);
-   var newsSection = '<div id="categoryName1">' + "<h2>" + category.charAt(0).toUpperCase() + category.slice(1) + "</h2></div>" + '<div id="newsCcontent1">';
+    var newsSection = '<div id="categoryName1_' + divName +'">' + "<h2>" + category.charAt(0).toUpperCase() + category.slice(1) + "</h2></div>" + '<div id="newsContent1_' + divName +'">'
     var source = "";
     var title = "";
     var author = "";
@@ -96,12 +96,12 @@ function formatNewsTwo(data, category) {
         //order: title + source + author + link + img + desc
     }
     
-    document.getElementById("customNews1").innerHTML = newsSection ;
+    document.getElementById(divName).innerHTML = newsSection ;
 }
 
-function formatNewsThree(data, category) {
+function formatNewsThree(data, category, divName) {
     //alert(category);
-   var newsSection = '<div id="categoryName2">' + "<h2>" + category.charAt(0).toUpperCase() + category.slice(1) + "</h2></div>" + '<div id="newsCcontent2">';
+    var newsSection = '<div id="categoryName2_' + divName +'">' + "<h2>" + category.charAt(0).toUpperCase() + category.slice(1) + "</h2></div>" + '<div id="newsContent2_' + divName +'">'
     var source = "";
     var title = "";
     var author = "";
@@ -133,10 +133,10 @@ function formatNewsThree(data, category) {
         //order: title + source + author + link + img + desc
     }
     
-    document.getElementById("customNews2").innerHTML = newsSection ;
+    document.getElementById(divName).innerHTML = newsSection ;
 }
 
-function setNews()
+function setNews(divName1, divName2 = "customNews", divName3 = "customNews")
 {
     //var completeUrl1 = newsUrl;
     //var completeUrl2 = newsUrl;
@@ -150,8 +150,7 @@ function setNews()
         fetch(completeUrl1)
         .then(function(response) { return response.json()})
         .then(function(data) {
-            //document.getElementById("customNews").innerHTML = newsSection;
-            formatNews(data, newsCategories[0]);
+            formatNews(data, newsCategories[0], divName1);
         })
         .catch(function() {
             alert("couldnt get news");
@@ -164,7 +163,7 @@ function setNews()
         fetch(completeUrl1)
         .then(function(response) { return response.json()})
         .then(function(data) {
-            formatNews(data, newsCategories[0]);
+            formatNews(data, newsCategories[0], divName1);
         })
         .catch(function() {
             alert("couldnt get news");
@@ -176,7 +175,7 @@ function setNews()
         fetch(completeUrl2)
         .then(function(response) { return response.json()})
         .then(function(data) {
-            formatNewsTwo(data, newsCategories[1]);
+            formatNewsTwo(data, newsCategories[1], divName2);
         })
         .catch(function() {
             alert("couldnt get news");
@@ -188,7 +187,7 @@ function setNews()
         fetch(completeUrl1)
         .then(function(response) { return response.json()})
         .then(function(data) {
-            formatNews(data, newsCategories[0]);
+            formatNews(data, newsCategories[0], divName1);
         })
         .catch(function() {
             alert("couldnt get news");
@@ -200,7 +199,8 @@ function setNews()
         fetch(completeUrl2)
         .then(function(response) { return response.json()})
         .then(function(data) {
-            formatNewsTwo(data, newsCategories[1]);
+            var div = '"' + divName2 + '"';
+            formatNewsTwo(data, newsCategories[1], div);
         })
         .catch(function() {
             alert("couldnt get news");
@@ -211,7 +211,7 @@ function setNews()
         fetch(completeUrl3)
         .then(function(response) { return response.json()})
         .then(function(data) {
-            formatNewsThree(data, newsCategories[2]);
+            formatNewsThree(data, newsCategories[2], divName3);
         })
         .catch(function() {
             alert("couldnt get news");

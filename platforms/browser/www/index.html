@@ -71,22 +71,19 @@
 			 </section>
 			 
 			<div class="box1">		 		 
-				<div class="weather">
-					<h2 id="cityName"></h2>
-					 <h5 id="desc"></h5>
-						<h4 id="temp"></h4>
-						<div class="weather2" id="icon"></div>
+				<div class="weather" id="weatherOverview_Index">
+
 				 </div>
-						 </div>
+			</div>
 						 
-						 <div class="box2">
-							<div id="customNews">
+			<div class="box2">
+							<div id="customNews_Index">
 							</div>
-							<div id="customNews1">
+							<div id="customNews1_Index">
 						 </div>
-						 <div id="customNews2">
+						 <div id="customNews2_Index">
 						 </div>
-						 </div>
+			</div>
 					  </div>
 					</div> 	
 				</div>
@@ -102,7 +99,8 @@
     <script type="text/javascript">
 				app.initialize();
 				$(document).ready(function(){
-    				setNews();
+						setNews("customNews_Index", "customNews1_Index", "customNews2_Index");
+						prepareData("weatherOverview_Index");
 				});
 		</script>
 		

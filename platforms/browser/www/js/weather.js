@@ -24,7 +24,7 @@ function hourlyWeather(data) {
         // JALEN: if you want to add more html tags do so by:
           // "<tag name> + variables provided + </tag name>"
         time = "<p>" + monthNames[month] + " " + day + " " + hours + "</p>";
-        weather =  "<p>Temperature: " + data.list[i].main.temp + "</p>";
+        weather =  "<p>Temperature: " + data.list[i].main.temp + " &deg;F</p>";
         icon = '<img src="http://openweathermap.org/img/w/' + data.list[i].weather[0].icon + '.png">';
         section += '<div class="weatherSection">' + time + weather + icon + "</div>";
     }
@@ -32,25 +32,25 @@ function hourlyWeather(data) {
     //document.getElementById("tempWeather").innerHTML = weather;
 }
 
-function weather(data) {
+function weather(data, divName) {
     //document.getElementById("info").innerHTML = 
-    var temp = data.list[0].main.temp;
-    var description = data.list[0].weather[0].main;
-    var icon = data.list[0].weather[0].icon;
-    var cityName = data.city.name;
 
-    document.getElementById("cityName").innerHTML = cityName;
-    document.getElementById("temp").innerHTML = temp;
-    document.getElementById("desc").innerHTML = description;
-    document.getElementById("icon").innerHTML = '<img src="http://openweathermap.org/img/w/' + icon + '.png">';
+    var section = "";
+    var temp = '<h4 class="temp">' + data.list[0].main.temp + ' &deg;F</h4>';
+    var description = '<h5 class="desc">' + data.list[0].weather[0].main + '</h5>';
+    var icon = '<div class="icon"><img src="http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png"></div>';
+
+    var cityName = '<h2 class="cityName">' + data.city.name + '</h2>';
+    section = cityName + description + temp + icon;
+    document.getElementById(divName).innerHTML = section;
 }
 
-function getData(url, zip, apiKey) {
+function getData(url, zip, apiKey, divName) {
     fetch(url + zip + "&units=imperial" +"&APPID=" + apiKey)
     .then(function(response) { return response.json()})
     .then(function(data) {
         //alert(url + zip + "&units=imperial" +"&APPID=" + apiKey);
-        weather(data);
+        weather(data, divName);
         hourlyWeather(data);
     })
     .catch(function() {
@@ -58,14 +58,12 @@ function getData(url, zip, apiKey) {
             alert("couldnt get weather");
     });
 }
-const prepareData = function() {
+function prepareData(divName) {
     let zip = Cookies.get('zip');
-    getData(url, zip, apiKey);
+    getData(url, zip, apiKey, divName);
 }
 
-$(document).ready(function(){
-    prepareData();
-});
+
 
 
 
