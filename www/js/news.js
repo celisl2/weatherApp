@@ -27,6 +27,8 @@ function getCustomNews()
 
 function formatNews(data, category, divName) {
     //alert(category);
+
+    Cookies.set('newsAreSet', "yes");
    var newsSection = '<div id="categoryName0_' + divName +'">' + "<h2>" + category.charAt(0).toUpperCase() + category.slice(1) + "</h2></div>" + '<div id="newsContent0_' + divName +'">'
     var source = "";
     var title = "";
@@ -153,7 +155,8 @@ function setNews(divName1, divName2 = "customNews", divName3 = "customNews")
             formatNews(data, newsCategories[0], divName1);
         })
         .catch(function() {
-            alert("couldnt get news");
+            if(Cookies.get("newsAreSet") !== "yes")
+                alert("couldnt get news");
         });
         
     }

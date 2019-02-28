@@ -1,6 +1,10 @@
 const apiKey = "fe65315556290762cbdaa0565485574b";
 const url = "http://api.openweathermap.org/data/2.5/forecast?zip=";
 
+function weatherIcons(iconCode) {
+
+}
+
 function hourlyWeather(data) {
     var time = "";
     var weather = "";
@@ -25,7 +29,7 @@ function hourlyWeather(data) {
           // "<tag name> + variables provided + </tag name>"
         time = "<p>" + monthNames[month] + " " + day + " " + hours + "</p>";
         weather =  "<p>Temperature: " + data.list[i].main.temp + " &deg;F</p>";
-        icon = '<img src="http://openweathermap.org/img/w/' + data.list[i].weather[0].icon + '.png">';
+        icon = '<img src="../img/' + data.list[i].weather[0].icon + '.png">';
         section += '<div class="weatherSection">' + time + weather + icon + "</div>";
     }
     document.getElementById("hourlyWeather").innerHTML = section;
@@ -38,7 +42,7 @@ function weather(data, divName) {
     var section = "";
     var temp = '<h4 class="temp">' + data.list[0].main.temp + ' &deg;F</h4>';
     var description = '<h5 class="desc">' + data.list[0].weather[0].main + '</h5>';
-    var icon = '<div class="icon"><img src="http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png"></div>';
+    var icon = '<div class="icon"><img src="../img/' + data.list[0].weather[0].icon + '.png"></div>';
 
     var cityName = '<h2 class="cityName">' + data.city.name + '</h2>';
     section = cityName + description + temp + icon;
