@@ -50,7 +50,7 @@ var app = {
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
-    /*
+    
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
@@ -61,5 +61,5 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
-    */
+    
 };
