@@ -21,17 +21,12 @@ font-size:12px;
 
 
 h1{
-font-size:30px;
+font-size:25px;
  text-align: center;
  color:#fff;
- font-size:40px;
+
 }
 
-h2{
-font-size:40px;
- text-align: center;
- color:#fff;
-}
 
 h3{
  font-family: 'Roboto', sans-serif;
@@ -41,15 +36,165 @@ font-size:20px;
  color:#fff;
 }
 h4{
-font-size:20px;
+font-size:35px;
  text-align: center;
  color:#fff;
+ 
+margin-top: 20px;
+margin-bottom: 20px;
+
 }
 h5{
-font-size:25px;
+font-size:15px;
  text-align: center;
  color:#fff;
+    margin-top: 15px;
+
 }
+
+.allSettings{
+    padding-top: 35px;
+}
+
+
+.newsSettings {
+ border-radius: 20px;
+ padding-top:10px;
+padding-right:10px;
+padding-left:10px;
+}
+
+.newsSettings h2{
+ font-size:20px;
+ margin-bottom: 0px;
+    margin-top: 1px;
+ color:#fff;
+}
+
+.newsSettings p{
+ color:#fff;
+}
+
+.setZipCode{
+
+color:#fff;
+ text-align: center;
+
+ border-radius: 20px;
+
+}
+
+.setZipCode p{
+padding-top:20px;
+color:#fff;
+ text-align: center;
+}
+
+.setSettings{
+text-align: center;
+}
+
+button, input, optgroup, select, textarea {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    border-radius: 25px;
+}
+
+.genNews{
+
+}
+
+.genNews h2{
+font-size:25px;
+text-align: center;
+}
+
+.news{
+padding-right: 10px;
+    padding-left: 10px;
+    background-color: #DDB67B;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+}
+
+.title{
+ text-align: left;
+    padding-top: 10px;
+}
+
+.title h3{
+ text-align: left;
+}
+#allNews{
+color:#fff;
+}
+
+.link{
+padding-bottom:10px;
+}
+
+.cityName{
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+.cityName h2{
+   font-size:28px;
+}
+
+.icon img {
+width:50%;
+height:50%;
+}
+
+.weatherSection{
+display:flex;
+width:20%;
+}
+
+.weatherSection img{
+width:25%;
+height:25%;
+}
+
+#categoryName0_customNews_News{
+text-align: center;
+color:#fff;
+}
+
+#categoryName2_customNews2_News h2{
+text-align: center;
+color:#fff;
+}
+
+.customNews_News{
+color:#fff;
+
+}
+
+.hourlyWeather {
+
+}
+
+.source{
+color:#fff;
+}
+
+.author{
+color:#fff;
+}
+
+.newsDescription{
+color:#fff;
+}
+
+
 /* Add animation to "page content" */
 #loader img{ 
   display: block;
@@ -138,12 +283,11 @@ width:50%;
 .weatherSection{
 text-align: center;
 color:#fff;
-width:10%;
+width:100%;
 }
 
 .box1{
   color: white;
-  margin: 20px;
   padding: 20px;
 }
 
