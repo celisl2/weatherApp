@@ -14,10 +14,10 @@ function hourlyWeather(data) {
     for(var i = 0; i < 13; i ++)
     {
         var monthNames = [
-            "January", "February", "March",
-            "April", "May", "June", "July",
-            "August", "September", "October",
-            "November", "December"
+            "January,", "February,", "March,",
+            "April,", "May,", "June,", "July,",
+            "August,", "September,", "October,",
+            "November,", "December,"
           ];
         var date = new Date(data.list[i].dt_txt)
         var day = date.getDate();
@@ -28,7 +28,7 @@ function hourlyWeather(data) {
         // JALEN: if you want to add more html tags do so by:
           // "<tag name> + variables provided + </tag name>"
         time = "<p>" + monthNames[month] + " " + day + " " + hours + "</p>";
-        weather =  "<p>Temperature: " + data.list[i].main.temp + " &deg;F</p>";
+        weather =  "<p> " + data.list[i].main.temp + " &deg;F</p>";
         icon = '<img src="../img/' + data.list[i].weather[0].icon + '.png">';
         section += '<div class="weatherSection">' + time + weather + icon + "</div>";
     }
