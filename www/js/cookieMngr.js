@@ -82,7 +82,7 @@ let bussiness = $('#business').is(':checked');
 function getZipCookie() {
     var cookie = Cookies.get('zip');
     if(cookie == null) {
-        window.location.replace("preference.html");
+        window.location.replace("index.html");
     }
     return cookie;
 }
@@ -97,7 +97,7 @@ function getCoordinates() {
         Cookies.set('lat', data.city.coord.lat);
         Cookies.set('lon', data.city.coord.lon);
         //alert(Cookies.get("lat") + " - " + Cookies.get("lon"));
-        window.location.replace("index.html");
+        window.location.replace("home.html");
     })
     .catch(function() {
         return false;
