@@ -33,7 +33,7 @@ function callback(results, status) {
       var closeDiv = '</div>';
       var divOpen = '<div class="coffeePlace">';
 
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 3; i++) {
       var place = results[i];
       if(place.opening_hours.open_now)
         hours = '<p> Open Now <p>';
