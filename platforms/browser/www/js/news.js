@@ -6,8 +6,8 @@ function getCustomNews()
 {
     var newsCategories = new Array();
 
-    if(Cookies.get('bussiness') == "bussiness")
-        newsCategories[newsCategories.length] = Cookies.get('bussiness');
+    if(Cookies.get('business') == "business")
+        newsCategories[newsCategories.length] = Cookies.get('business');
     if(Cookies.get('entmnt') == "entertainment")
         newsCategories[newsCategories.length] = Cookies.get('entmnt');
     if(Cookies.get('science') == "science")
@@ -148,7 +148,7 @@ function setNews(divName1, divName2 = "customNews", divName3 = "customNews")
     
     if(newsCategories.length == 1) {
         var completeUrl1 = newsUrl + newsCategories[0] + newsKey;
-        //alert(completeUrl1);
+        
         fetch(completeUrl1)
         .then(function(response) { return response.json()})
         .then(function(data) {
@@ -186,7 +186,6 @@ function setNews(divName1, divName2 = "customNews", divName3 = "customNews")
     }
     else {
         var completeUrl1 = newsUrl + newsCategories[0] + newsKey;
-
         fetch(completeUrl1)
         .then(function(response) { return response.json()})
         .then(function(data) {
@@ -198,19 +197,18 @@ function setNews(divName1, divName2 = "customNews", divName3 = "customNews")
 
         
         var completeUrl2 = newsUrl + newsCategories[1] + newsKey;
-
+        //alert(completeUrl2);
         fetch(completeUrl2)
         .then(function(response) { return response.json()})
         .then(function(data) {
             var div = '"' + divName2 + '"';
-            formatNewsTwo(data, newsCategories[1], div);
+            formatNewsTwo(data, newsCategories[1], divName2);
         })
         .catch(function() {
-            alert("couldnt get news");
+            alert("couldnt get news 2");
         });
 
         var completeUrl3 = newsUrl + newsCategories[2] + newsKey;
-
         fetch(completeUrl3)
         .then(function(response) { return response.json()})
         .then(function(data) {

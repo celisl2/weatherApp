@@ -19,12 +19,12 @@ let bussiness = $('#business').is(':checked');
    let sports = $('#sports').is(':checked');
    let tech = $('#technology').is(':checked');
 
-    if( (Cookies.get('bussiness')  != null) || (Cookies.get('entmnt')  != null) || (Cookies.get('gen')  != null) || (Cookies.get('health')  != null) || (Cookies.get('science') != null) || (Cookies.get('sports')  != null) || (Cookies.get('tech')  != null)) {
+    if( (Cookies.get('business')  != null) || (Cookies.get('entmnt')  != null) || (Cookies.get('gen')  != null) || (Cookies.get('health')  != null) || (Cookies.get('science') != null) || (Cookies.get('sports')  != null) || (Cookies.get('tech')  != null)) {
         //check which ones are set
         //delete them
         //set new ones
-        if(Cookies.get('bussiness')  != null) {
-            Cookies.remove('bussiness');
+        if(Cookies.get('business')  != null) {
+            Cookies.remove('business');
         }
         if(Cookies.get('entmnt')  != null)  {
             Cookies.remove('entmnt');
@@ -50,7 +50,7 @@ let bussiness = $('#business').is(':checked');
    if((bussiness) || (entmnt) || (gen) || (health) || (science) || (sports) || (tech))
    {
         if(bussiness) {
-            Cookies.set('bussiness', "bussiness");
+            Cookies.set('business', "business");
         }
         if(entmnt) {
             Cookies.set('entmnt', "entertainment");
