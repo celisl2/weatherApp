@@ -28,17 +28,25 @@ function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
       var section = "";
       var locationName = "";
-      var hours = "";
+      let hours = "";
       var address = "";
       var closeDiv = '</div>';
       var divOpen = '<div class="coffeePlace">';
 
     for (var i = 0; i < 10; i++) {
       var place = results[i];
-      if(place.opening_hours.open_now)
-        hours = '<p> Open Now <p>';
-        else 
-        hours = '<p> Closed <p>';
+      
+      let ob = place.opening_hours;
+	if(ob && ob.open_now !== undefined){
+if(place.opening_hours.open_now)
+        	hours = '<p> Open Now <p>';
+        	else 
+        	hours = '<p> Closed <p>';
+			}
+       else{ 
+       hours = '<p> No schedule set for this place <p>';
+  			}
+      	
       locationName = '<h3>' + place.name + '</h3>';
       //hours = '<p>' + place.opening_hours.opening_hours.open_now + '<p>';
       address = '<p>' +place.formatted_address + '<p>';
