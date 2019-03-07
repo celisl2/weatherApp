@@ -82,7 +82,7 @@ function hourlyWeather(data) {
 
                     low = '<div class="low">' +"<p> Low " + data.list[i].main.temp_min + " &deg;F</p>" + "</div>";
 
-                    icon = '<div class="weatherImgH">' +'<img src="../img/' + data.list[i].weather[0].icon + '.png">' + "</div>";
+                    icon = '<div class="weatherImgH">' +'<img src="img/' + data.list[i].weather[0].icon + '.png">' + "</div>";
 
                     section += '<div class="weatherSection">' + time + description + high + low + icon + "</div>";
                     count++;
@@ -99,7 +99,7 @@ function hourlyWeather(data) {
 
                     low = '<div class="low">' +"<p> Low " + data.list[i].main.temp_min + " &deg;F</p>" + "</div>";
 
-                    icon = '<div class="weatherImgH">' +'<img src="../img/' + data.list[i].weather[0].icon + '.png">' + "</div>";
+                    icon = '<div class="weatherImgH">' +'<img src="img/' + data.list[i].weather[0].icon + '.png">' + "</div>";
                     
                     section += '<div class="weatherSection">' + time + description + high + low + icon + "</div>";
                     count2++;
@@ -117,7 +117,7 @@ function hourlyWeather(data) {
 
                     low = '<div class="low">' +"<p> Low " + data.list[i].main.temp_min + " &deg;F</p>" + "</div>";
 
-                    icon = '<div class="weatherImgH">' +'<img src="../img/' + data.list[i].weather[0].icon + '.png">' + "</div>";
+                    icon = '<div class="weatherImgH">' +'<img src="img/' + data.list[i].weather[0].icon + '.png">' + "</div>";
                     
                     section += '<div class="weatherSection">' + time + description + high + low + icon + "</div>";
                     count2++;
