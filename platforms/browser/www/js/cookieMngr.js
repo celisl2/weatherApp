@@ -98,6 +98,11 @@ function getCoordinates() {
         Cookies.set('lon', data.city.coord.lon);
         //alert(Cookies.get("lat") + " - " + Cookies.get("lon"));
         window.location.replace("home.html");
+        //navigator.app.loadUrl("file:///android_asset/www/home.html");
+        /*var isAndroid = !!navigator.userAgent.match(/android/ig);
+        var targetUrl = 'home.html';
+        window.location = targetUrl;
+        */
     })
     .catch(function() {
         return false;

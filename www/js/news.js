@@ -248,7 +248,13 @@ function displayNews() {
         }
 
         link = '<div class="link"><a href="' + data.articles[i].url + '">See full article</a>' + closeDiv;
-        desc = '<div class="newsDescription"><p>' + data.articles[i].description + '</p>' + closeDiv;
+        if(data.articles[i].description == null) {
+            desc = "No description";
+        }
+        else {
+            desc = '<div class="newsDescription"><p>' + data.articles[i].description + '</p>' + closeDiv;
+        }
+        
         if(data.articles[i].author == null) {
             newsSection += '<div class="news">' + title + source + link + imgLink + desc + "</div>" ;
         }

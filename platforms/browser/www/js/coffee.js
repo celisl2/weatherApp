@@ -43,7 +43,7 @@ function callback(results, status) {
       //hours = '<p>' + place.opening_hours.opening_hours.open_now + '<p>';
       address = '<p>' +place.formatted_address + '<p>';
 
-      section += divOpen + locationName + hours + address + closeDiv;
+      section += divOpen + locationName + '<div class="textCoffee">' + hours + address + closeDiv + closeDiv;
     }
     document.getElementById('coffeeList_Coffee').innerHTML = section;
   }
